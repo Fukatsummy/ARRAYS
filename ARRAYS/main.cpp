@@ -14,31 +14,34 @@ void main()
 	}
 	for (int i = 0; i < n; i++) //вывод массива на экран
 	{
-		cout << arr[i]<< "\t";
+		cout << arr[i] << "\t";
 	}
 	cout << endl;
 
 	//Вывод массивана экран в обратном порядке
 
 
-	for (int i=n-1; i >= 0; i--)
+	for (int i = n - 1; i >= 0; i--)
 	{
-		cout << arr[i]<< "\t";
+		cout << arr[i] << "\t";
 	}
 	cout << endl;
 	int s = 0;
-	for (int i = 0; i< n; i++)//сумма
+	for (int i = 0; i < n; i++)//сумма
 	{
-			s=s + arr[i];
-	
-		cout << s << "\t";
+		s = s + arr[i];
 	}
-	cout << endl;
+	cout << "Сумма элементов массива: " << s << endl;
+	cout << "Среднее арифметическое элементо массива: " << (double)s/n << endl;
 	
-	for (int i = 0; i< n; i++)//
+	int min,max;
+	min = max = arr[0];
+	for (int i = 0; i < n;i++)
 	{
-		s = (s + arr[i])/5;
-
-		cout << s << "\t";
+		if (arr[1] < min)min = arr[i];
+		if ( arr[1] > max)max = arr[i];
 	}
-} 
+	cout << "Минимальное значение: " << min <<endl;
+	cout << "Максимальное значение в массиве: " << max << endl;
+}
+	
