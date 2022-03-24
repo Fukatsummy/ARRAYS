@@ -26,10 +26,19 @@ void main()
 		cout << arr[i]<< "\t";
 	}
 	cout << endl;
-
-	for (int i = 0; i+n < n; i++)
+	int s = 0;
+	for (int i = 0; i< n; i++)//сумма
 	{
-		cout << arr[i] << "\t";
+			s=s + arr[i];
+	
+		cout << s << "\t";
 	}
 	cout << endl;
+	
+	for (int i = 0; i< n; i++)//
+	{
+		s = (s + arr[i])/5;
+
+		cout << s << "\t";
+	}
 } 
