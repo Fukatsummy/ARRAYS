@@ -35,12 +35,12 @@ void main()
 	cout << "Введите количество сдвигов: "; cin >> number_of_shifts2;
 	for (int i = n-1; i > number_of_shifts2; i--)
 	{
-		int buffer1 = arr[n - 1];
-		for (int i = (n - 1); i >= 0; i--)
+		int buffer = arr[n - 1];
+		for (int i = (n - 1); i > 0; i--)
 		{
 			arr[i] = arr[i - 1];
 		}
-		arr[0] = buffer1;
+		arr[0] = buffer;
 	}
 
 	//Вывод сдвинутого массива на экран:

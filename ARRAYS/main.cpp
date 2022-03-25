@@ -7,10 +7,16 @@ void main()
 	const int n = 5; //количество элементов массивa (размер массива)
 	int arr[n] = { 3,5,8 };
 	//arr [2] = 123;  //обращение ко второму элементу массива
-	cout << "Введите элеметы массива (" << n << "шт):";
+	int minRand;
+	int maxRand;
+	cout << "Введите минимально возможное случайное число: "; cin >> minRand;
+	cout << "Введите максимально возможное случайное число: "; cin >> maxRand;
+	
+	//cout << "Введите элеметы массива (" << n << "шт):";
 	for (int i = 0; i < n; i++) //Ввод массива в консоль
 	{
-		cin >> arr[i];
+		//cin >> arr[i]; //arr[i]=rand()%50+50;
+		arr[i] = rand() %(maxRand - minRand) + minRand;
 	}
 	for (int i = 0; i < n; i++) //вывод массива на экран
 	{
@@ -38,8 +44,8 @@ void main()
 	min = max = arr[0];
 	for (int i = 0; i < n;i++)
 	{
-		if (arr[1] < min)min = arr[i];
-		if ( arr[1] > max)max = arr[i];
+		if (arr[i] < min)min = arr[i];
+		if ( arr[i] > max)max = arr[i];
 	}
 	cout << "Минимальное значение: " << min <<endl;
 	cout << "Максимальное значение в массиве: " << max << endl;
