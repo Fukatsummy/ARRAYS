@@ -7,18 +7,40 @@ void main()
 	int decimal; //десятичное число вводимое с клавиатуры
 	const int SIZE = 32; //максимальное возможная разрядность введенного числа
 	bool bin[SIZE] = {}; //этот массив будет хранить разряды двоичного числа
+	bool octal[SIZE] = {};
+	char Hexadecimal[SIZE] = {};
 	cout << "Введите десятичное число: "; cin >> decimal;
 	//int n=0; // Фактическая разрядность числа
 	int i = 0;
-	for (; decimal>0; i++)
+	//for (; decimal > 0; i++)
+	//{
+	//	bin[i] = decimal % 2;
+	//	decimal /= 2;
+	//	//n++;
+	//}
+	//for (i--; i >= 0; i--)
+	//{
+	//	cout << bin[i];
+	//}
+
+	/*for (;decimal; i++ )
 	{
-		bin[i] = decimal % 2;
-		decimal /= 2;
-		//n++;
+		octal[i] = decimal % 8;
+		decimal /= 8;
 	}
-	
-	for ( i --; i >= 0; i--)
+	for (i--; i >= 0; i--)
 	{
-		cout <<bin[i];
+		cout  << octal[i];
+	}
+	cout << endl;*/
+	//char 
+	for (; decimal; i++)
+	{
+		Hexadecimal[i] = decimal % 16;
+		decimal /= 16;
+	}
+	for (i ; i >=0 ; i--)
+	{
+	  cout << Hexadecimal[i];
 	}
 }
