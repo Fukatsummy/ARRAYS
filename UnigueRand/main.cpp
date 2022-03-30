@@ -5,13 +5,30 @@ void main()
 {
 	setlocale(LC_ALL, "");
 	const int n = 10;
-	int arr[n] = {};int i = 0
-	for (; i < n; i++)
+	int arr[n] = {};
+	bool a;
+	int i = 0;
+	for (; i < n;)//генерирует число
 	{
+		a = false;
+		int b = rand() % n;
 		arr[i] = rand() % n;
-		for (int j = i + 1; j < n; j++)
+		for (int j = 0; j < i; j++)//проверяет на уникальность
 		{
-			if (arr[i] < arr[j + 1];)
+			if (arr[j] == b)
+			{
+				a = true;//изменяет повторы
+			}
+		}
+		if (a != true)//сдвигает ячейки
+		{
+			arr[i] = b;
+			i++;
+		}
+		/*#ifdef TEST
+				for (int j = i + 1; j < n; j++)
+		{
+			if (arr[i] < arr[j + 1])
 			{
 				int buffer = arr[i];
 				arr[i] = arr[j];
@@ -21,13 +38,15 @@ void main()
 		}
 	}
 		for (int j = i - 1; j < n; j++)
-		{ 
-			if (arr[i] > arr[j - 1];)
+		{
+			if (arr[i] > arr[j - 1])
 			{
 				int buffer = arr[i];
 				arr[i] = arr[j];
 				arr[j] = buffer;
 			}
+#endif // TEST*/
+
 	}
 	
 	for (int i = 0; i < n; i++)
