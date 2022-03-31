@@ -7,17 +7,18 @@ void main()
 	const int n = 10;
 	int arr[n] = {};
 	bool a;
-	int i = 0;
-	for (; i < n;)//генерирует число
+	bool unique;
+#ifdef HOMEWORK
+	for (int i = 0; i < n;)//генерирует число
 	{
-		a = false;
+		a = 0;
 		int b = rand() % n;
 		arr[i] = rand() % n;
 		for (int j = 0; j < i; j++)//проверяет на уникальность
 		{
-			if (arr[j] == b)
+			if (arr[j] == arr[i])
 			{
-				a = true;//изменяет повторы
+				a = 1;//изменяет повторы
 			}
 		}
 		if (a != true)//сдвигает ячейки
@@ -46,12 +47,44 @@ void main()
 				arr[j] = buffer;
 			}
 #endif // TEST*/
-
 	}
-	
+	for
+#endif // HOMEWORK
+#ifdef UNIQUE1
+		for (int i = 0; i < n; i++)
+		{
+			do
+			{
+				arr[i] = rand() % n;
+				unique = true;
+				for (int j = 0; j < i; j++)
+				{
+					if (arr[i] == arr[j])
+					{
+						unique = false;
+						break;//прерывает текущую итерацию и все последующие
+					}
+				}
+			} while (!unique);
+
+		}
+#endif // UNIQUE1
+
 	for (int i = 0; i < n; i++)
 	{
-		cout << arr[i]<< tab;
+		arr[i] = rand() % n;
+		for (int j = 0; j < i; j++)
+		{
+			if (arr[i]==arr[j])
+			{
+				i--;
+				break;
+			}
+		}
+	}
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << tab;
 	}
 	cout << endl;
 
