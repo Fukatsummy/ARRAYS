@@ -16,7 +16,7 @@ void main()
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			arr[i][j] << tab;
+			arr[i][j] << tab;+rand%100
 		}
 	}*/
 	for (int i = 0; i < ROWS; i++)//перебирает строки
